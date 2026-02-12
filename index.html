@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grave Wave　ポートフォリオ.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link rel="stylesheet" href="style.css">
+<h1 id="font-color%22ffffffff%22grave-wave-%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AAfont"><font color="#ffffffff">「Grave Wave」　ポートフォリオ</font></h1>
+<img src="Title.png" width="1000">
+<br>
+<br>
+<p>ゲームPVは<a href="https://www.youtube.com/watch?v=Y3ZdnPw-Aho">こちら</a>！！！<br></p>
+<br>
+<br>
+<h2 id="font-color%22ff0000%22%E7%9B%AE%E6%AC%A1font"><font color="#ff0000">目次</font></h2>
+<hr>
+<ul>
+  <li><a href="#概要紹介">概要紹介</a>
+    <ul>
+      <li><a href="#作品概要">作品概要</a></li>
+      <li><a href="#開発環境">開発環境</a></li>
+    </ul>
+  </li>
+  <li><a href="#ゲーム内容紹介">ゲーム内容紹介</a></li>
+        <li><a href="#ゲームの流れ">ゲームの流れ</a></li>
+        <li><a href="#このゲームのポイント">このゲームのポイント</a></li>
+  <li><a href="#技術紹介">技術紹介</a>
+    <ul>
+      <li><a href="#疎結合化">疎結合化</a></li>
+      <li><a href="#オブジェクトプール">オブジェクトプール</a></li>
+      <li><a href="#LOD">LOD</a></li>
+      <li><a href="#衝突判定">衝突判定</a></li>
+      <li><a href="#データ駆動設計">データ駆動設計</a></li>
+      <li><a href="#その他の技術紹介">その他の技術紹介</a>
+        <ul>
+           <li><a href="#フォグ">フォグ</a></li>
+           <li><a href="#マルチスレッドの試み">マルチスレッドの試み</a></li>
+           <li><a href="#ステートパターン">ステートパターン</a></li>
+           <li><a href="#シングルトンパターン">シングルトンパターン</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#今後の展望">今後の展望</a></li>
+</ul>
+<br>
+<br>
+<h2 id = "概要紹介" style="color: red;">概要紹介</h2>
+<hr>
+<h3 id = "作品概要" style="color: red;">作品概要</h3>
+<hr>
+<ul>
+<li>
+<p><font color="#ffff00">ゲームタイトル</font>
+　　　　　　Grave Wave</p>
+</li>
+<li>
+<p><font color="#ffff00">ゲームジャンル</font>
+　　　　　　FPSタワーディフェンス</p>
+</li>
+<li>
+<p><font color="#ffff00">プレイ人数</font>
+　　　　　　　1人</p>
+</li>
+<li>
+<p><font color="#ffff00">開発期間</font>
+　　　　　　　5か月</p>
+</li>
+</ul>
+<br>
+<h3 id = "開発環境" style="color: red;">開発環境</h3>
+<hr>
+<ul>
+<li>
+<p><font color="#ffff00">使用言語</font>
+　　　　　　　C++（C++14）</p>
+</li>
+<li>
+<p><font color="#ffff00">使用エンジン</font>
+　　　　　　学内エンジン（DirectX12）</p>
+</li>
+<li>
+<p><font color="#ffff00">プラットフォーム</font>
+　　　　　 Windows11</p>
+</li>
+<li>
+<p><font color="#ffff00">使用ツール</font>
+　　　　　　　Visual Studio 2022,GitHub</p>
+</li>
+</ul>
+<br>
+<br>
+<h2 id = "ゲーム内容紹介" style="color: red;">ゲーム内容紹介</h2>
+<hr>
+<h3 id = "ゲームの流れ" style="color: red;">ゲームの流れ</h3>
+<hr>
+<img src="ゲーム紹介01.png" width="500">
+<p>荒野の奥から大量のゾンビが迫ってくる！！
+<br>
+<br></p>
+<img src="ゲーム紹介02.png" width="500">
+<p>銃でゾンビを撃退して防壁を守る！！
+<br>
+<br></p>
+<img src="ゲーム紹介03.png" width="500">
+<p>最終ウェーブのボスを撃破すると、ゲームクリア！！！
+<br>
+<br></p>
+<h3 id = "このゲームのポイント" style="color: red;">このゲームのポイント</h3>
+<hr>
+<p>このゲームの肝は、「<font color="#ffff00">どれだけ速やかにゾンビを撃退できるか</font>」</p>
+<p>プレイヤーには射撃精度と視野の広さが問われ、<br>
+ゾンビを正確に撃ち抜き、迅速に殲滅していくと同時に、<br>
+常に周りをみて、防壁に接近しているゾンビがいないかを注視していく必要がある。</p>
+<br>
+<br>
+<h3 id = "ショップ" style="color: red;">ショップ</h3>
+<hr>
+<p>準備フェーズに銃や弾薬を購入できるシステムを実装。<br>
+様々な銃を試すことができ、プレイスタイルの幅を広げることができた。<br><br>
+<img src="ショップ.png" width="500"></p>
+<br>
+<br>
+<br>
+<h2 id = "技術紹介" style="color: red;">技術紹介</h2>
+<hr>
+<br>
+<h3 id = "疎結合化" style="color: red;">疎結合化</h3>
+<hr>
+<br>
+<p>モジュール間の疎結合化を意識してクラス設計を行った。</p>
+<br>
+<p><font color="#ffff00">実装方法</font></p>
+<img src="技術紹介01.png" width="500">
+<br>
+<p>モジュールが他のモジュールを直接知らなくても実装できるような形で実装進め、
+他の管理クラスが必要となる情報だけを教えるなど、「必要最低限のことしか教えない設計」で実装を行った。<br>
+１か箇所の変更で他クラスに影響することがなくなり、保守性、拡張性の高い設計にすることができた。</p>
+<br>
+<br>
+<p><font color="#ffff00">実装の意図</font></p>
+<img src="技術紹介02.png" width="500">
+<br>
+<p>過去のゲーム制作では、結合度をあまり意識せず、モジュール間の繋がりが強い状態で実装を進めていた。<br>
+その結果、一つの変更が他に影響してしまう結果に。デバッグや新規実装が非効率なものとなってしまった。<br>
+今回の制作では、長期的な開発効率を意識した実装を行った。
+「今だけのコード」ではなく、「後々見返したときに修正、拡張がしやすいか」を始めから意識するように心がけた。</p>
+<br>
+<br>
+<h3 id = "オブジェクトプール" style="color: red;">オブジェクトプール</h3>
+<hr>
+<br>
+<p>ゾンビのスポーンをオブジェクトプールにて行った。</p>
+<p><font color="#ffff00">実装方法</font></p>
+<img src="技術紹介07.png" width="700">
+<p>↑オブジェクトプール実装イメージ↑<br><br></p>
+<p>実装の流れは以下の通り</p>
+<ol>
+<li>インゲームに入る際、そのゲーム中で出現するであろうゾンビの最大数をあらかじめ生成。</li>
+<li>インゲーム中は生成削除を行わず、プールとフィールドを行き来させる。</li>
+</ol>
+<br>
+<p>この実装方法では、インゲーム中にゾンビの生成削除を行わない。<br>
+そのため、ゲーム中はCPUへの負荷を安定させ、フレームレートを一定に保てるだけでなく、
+メモリの断片化を防ぎ、メモリ不足に陥るリスクを抑えることもできた。</p>
+<br>
+<p><font color="#ffff00">実装の意図</font></p>
+<img src="技術紹介03-1.gif" width="500">
+<p>↑new、deleteの瞬間にメモリ使用量が多くなっている様子（イメージ）↑<br>
+<br></p>
+<img src="技術紹介04-1.gif" width="500">
+<p>↑メモリの断片化（イメージ）↑<br>
+<br></p>
+<p>実装前はゲーム中にゾンビの生成と削除を繰り返していた。<br>
+その結果、生成、削除の瞬間だけ、フレームレートが著しく低下し、ユーザー体験を損ねてしまっていた。<br>
+また、メモリの断片化が起き、動作環境によってはメモリ不足に陥ってしまう可能性があった。</p>
+<br>
+<br>
+<br>
+<h3 id = "LOD" style="color: red;">LOD</h3>
+<hr>
+<br>
+<p>ゾンビの描画処理にLOD処理を加えた。<br></p>
+<p><font color="#ffff00">実装方法</font></p>
+<img src="技術紹介10.png" width="600">
+<p>↑LODの実装イメージ↑
+<br>
+<br></p>
+<p>実装手順は以下の通り</p>
+<ol>
+<li>ゾンビのスポーン時はLOWモデルで描画。</li>
+<li>カメラとゾンビとの距離が一定距離になったら、、、</li>
+<li>Highモデルに切り替える。<br></li>
+</ol>
+<p>この実装手段を取ることで、インゲーム中のGPUへの負荷を一定に保つことができた。<br>
+ユーザーからの見た目を一定に保ちつつ、フレームレートの低下を抑えることができた。<br></p>
+<img src="LOD_before.gif" width="600">
+<p>↑LODを実装する前の実行画面の様子↑
+<br>
+<br></p>
+<img src="LOD_after.gif" width="600">
+<p>↑LODを実装した後の実行画面の様子↑
+<br>
+<br></p>
+<p><font color="#ffff00">実装の意図</font>
+<br></p>
+<p>対策を施さずにゾンビを大量生成すると、GPUへの負荷が高くなってしまった。<br>
+その結果、フレームレートの低下が目立つ結果となり、プレイ体験を損ねてしまっていた。<br>
+また、動作環境によっては少ない生成数でも負荷がかかってしまうと考えた。</p>
+<br>
+<br>
+<br>
+<h3 id = "衝突判定" style="color: red;">衝突判定</h3>
+<hr>
+<br>
+<p>弾丸と目標物との当たり判定をSweepTestを用いて行った。<br></p>
+<p><font color="#ffff00">実装方法</font></p>
+<img src="Sweep_after.gif" width="600">
+<p>↑SweepTestで処理を行い、衝突判定が安定した図（イメージ）↑</p>
+<br>
+<p>SweepTestの処理手順は以下の通り<br>
+（学内エンジンで簡易的に使用できるようにはされている）</p>
+<ol>
+<li>弾丸の現在位置（始点）を取得する。</li>
+<li>弾丸の次のフレームに移動する位置（終点）を計算する。（移動ベクトル　×　移動速度）</li>
+<li>始点から終点までの大きさのコリジョンを置く。（指定した太さで）</li>
+<li>コリジョンにヒットしたものがある場合trueを返す。</li>
+</ol>
+<br>
+<p>この手段を取ることで、弾の速さ、大きさに関わらず、衝突判定を取ることができた。</p>
+<p>また、SweepTestを用いるにあたって、内部では多くのゲームでも使用されているBulletPhysicsを使用している。<br>
+だが、そのままの状態では「衝突判定」はとれるものの、「何に衝突したか」は取得できないものとなっている。<br>
+「どの弾が、どのゾンビに衝突したか」という対象物の情報が取れるような改造を施した。</p>
+<br>
+<p>修正箇所は以下の通り</p>
+<pre class="hljs"><code><div><span class="hljs-function">btScalar <span class="hljs-title">addSingleResult</span><span class="hljs-params">(btCollisionWorld::LocalConvexResult&amp; convexResult, <span class="hljs-keyword">bool</span> normalInWorldSpace)</span> <span class="hljs-keyword">override</span>
+</span>{
+    <span class="hljs-comment">//自分自身を弾く</span>
+    <span class="hljs-keyword">if</span> (&amp;m_me-&gt;GetbtCollisionObject() == convexResult.m_hitCollisionObject) <span class="hljs-keyword">return</span> <span class="hljs-number">0.0f</span>;
+    <span class="hljs-comment">//エネミー以外かつゴーストオブジェクトではない時</span>
+    <span class="hljs-keyword">if</span> (convexResult.m_hitCollisionObject-&gt;getUserIndex() != nsApp::enCollirionEnemy
+        &amp;&amp; convexResult.m_hitCollisionObject-&gt;getInternalType() != btCollisionObject::CO_GHOST_OBJECT) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0.0f</span>;
+    }
+    isHit = <span class="hljs-literal">true</span>;
+    m_you = convexResult.m_hitCollisionObject;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0.0f</span>;
+</div></code></pre>
+<br>
+<br>
+<p><font color="#ffff00">実装の意図</font></p>
+<img src="Sweep_before.gif" width="600">
+<p>↑実装前に弾の当たり判定が安定しなかった図（イメージ）↑</p>
+<br>
+<p>コリジョンだけののシンプルな衝突判定では、フレームごとのコリジョンの位置でしか判定を取ることができない。<br>
+そのため、弾の速さ、大きさによっては目標物を飛び越えてしまい、安定した判定を取得できなかった。<br>
+弾のステータスに関わらず、安定した判定を取れ、弾の太さも考慮したSweepTestを用いることで、プレイ体験はそのままに、安定した判定を取得できるようになるのではと考えた。</p>
+<br>
+<br>
+<br>
+<h3 id = "データ駆動設計" style="color: red;">データ駆動設計</h3>
+<hr>
+<p>数値調整時のイテレーション速度の向上のため、
+「ゾンビのHP」「弾の速さ」といった情報をjsonファイルにて調整できるようにした。</p>
+<p>ゲーム起動時に情報を外部から読み込むようにすることで、
+数値調整を施しても、ビルドをする必要がなくなった。</p>
+<pre class="hljs"><code><div><span class="hljs-string">"Comment"</span>: <span class="hljs-string">"ゾンビ用のパラメータ"</span>,
+<span class="hljs-string">"MoveSpeed"</span>:<span class="hljs-number">0.3</span>,
+<span class="hljs-string">"HP"</span>:<span class="hljs-number">10</span>,
+<span class="hljs-string">"AttackPower"</span>:<span class="hljs-number">3</span>,
+<span class="hljs-string">"AttackFrequency"</span>:<span class="hljs-number">3.0</span>,
+<span class="hljs-string">"AttackRange"</span>:<span class="hljs-number">50.0</span>
+</div></code></pre>
+<p>↑ゾンビのステータスを記載したjsonファイル↑</p>
+<h4 id="font-color%22ffff00%22%E3%83%9B%E3%83%83%E3%83%88%E3%83%AA%E3%83%AD%E3%83%BC%E3%83%89font"><font color="#ffff00">ホットリロード</font></h4>
+<p>また、ホットリロードの機能も実装した。<br>
+ゲーム実行中でも数値調整を行うことができ、さらにイテレーション速度を向上させることができた。</p>
+<img src="ホットリロード.gif" width="600">
+<p>↑ホットリロードを使用した数値調整↑</p>
+<h3 id = "その他の技術紹介" style="color: red;">その他の技術紹介</h3>
+<hr>
+<h4 id = "フォグ" style="color: yellow;">フォグ</h4>
+<p>ゾンビのスポーンやLODの切り替わりをプレイヤーから見えなくさせるため、
+簡易的なフォグを実装した。</p>
+<img src="fog.png" width="600">
+<p>↑ゲーム実行画面↑</p>
+<p>実装方法はシンプルで、カメラとオブジェクトとの距離を測り、
+その距離に応じてテクスチャにフォグの色をかける。<br>
+という方法で実装した。</p>
+<img src="fogImage.png" width="600">
+<p>↑フォグ実装イメージ↑</p>
+<br>
+<h4 id = "マルチスレッドの試み" style="color: yellow;">マルチスレッドの試み</h4>
+<p>更なるCPU負荷軽減を図るため、処理のマルチスレッド化を試みた。<br>
+実装箇所はエネミーと弾丸の当たり判定をチェックするfor文をマルチスレッドで行うよう試みた。<br><br></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span>* bulletInfo : bulletInfoList) {
+	<span class="hljs-keyword">auto</span>* bullet = <span class="hljs-keyword">dynamic_cast</span>&lt;nsApp::nsActor::nsBullet::NormalBullet*&gt;(bulletInfo-&gt;m_object);
+	<span class="hljs-comment">// Sweepテストで衝突判定をする</span>
+	Vector3 start = bullet-&gt;GetLocalPosition();
+	Vector3 end = start + (bullet-&gt;GetFlyDirection() * bullet-&gt;GetBulletSpeed());
+	<span class="hljs-keyword">auto</span>* btCollision = &amp;bulletInfo-&gt;m_collision-&gt;GetbtCollisionObject();
+	<span class="hljs-keyword">auto</span>* collisionShape = btCollision-&gt;getCollisionShape();
+	BulletCallback cb;
+	PhysicsWorld::GetInstance()-&gt;ConvexSweepTest(collisionShape, start, end, cb);
+	<span class="hljs-keyword">if</span> (cb.isHit) {
+		<span class="hljs-keyword">auto</span>* targetInfo = FindBulletCollisionInfo(cb.m_you);
+		<span class="hljs-keyword">if</span> (targetInfo) {
+			m_collisionPairList.push_back(CollisionPair(bulletInfo, targetInfo));
+		}
+	}
+}
+</div></code></pre>
+<p>↑処理をマルチスレッドにしたfor文↑<br><br></p>
+<p>だが、マルチスレッドにすることによってむしろ処理時間が伸びてしまった。<br>
+原因としては、エネミーがマルチスレッドを導入する必要があるほどの数ではなく、<br>
+スレッド間のデータの受け渡すコスト方が上回ってしまっていると考えられる。<br><br></p>
+<img src="multisled_before.png" width="300">
+<p>↑変更前の処理時間↑<br><br></p>
+<img src="multisled_after.png" width="300">
+<p>↑マルチスレッド実装後の処理時間↑<br><br></p>
+<p>今後、エネミーの総数が増えたり、他の箇所で導入する必要があるあった場合は実装したい。</p>
+<br>
+<h4 id = "ステートパターン" style="color: yellow;">ステートパターン</h4>
+<p>エネミーなどのキャラクターの状態ごとの処理を分離し、実装、デバッグをしやすくするため、
+ステートパターンで状態遷移、及び状態ごとの処理を行った。</p>
+<p>実装することで、状態の処理が分離され、一クラスごとの責任を分散することができた。<br>
+状態ごとの処理が干渉しにくくなり、保守性、拡張性が高い実装になった。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">StateMachine::Update</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (m_currentStateId != m_requestStateId)
+    {
+        IState* nextState = FindState(m_requestStateId);
+        K2_ASSERT(nextState, <span class="hljs-string">"次の状態が見つからない"</span>);
+        <span class="hljs-keyword">if</span> (nextState) {
+            <span class="hljs-keyword">if</span> (m_currentState) {
+                m_currentState-&gt;Exit();
+            }
+            nextState-&gt;Enter();
+            m_currentState = nextState;
+        }
+        m_currentStateId = m_requestStateId;
+    }
+    <span class="hljs-keyword">if</span> (m_currentState) {
+        m_currentState-&gt;Update();
+    }
+}
+</div></code></pre>
+<p>↑StateMachineでの、各Stateへの遷移の処理↑<br><br></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ZombieDeathState::Enter</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">auto</span>* owner = GetOwner&lt;ZombieStateMachine&gt;()-&gt;GetOwner();
+    owner-&gt;GetModel()-&gt;PlayAnimation(Zombie::EnAnimationVar_Death);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ZombieDeathState::Update</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">auto</span>* owner = GetOwner&lt;ZombieStateMachine&gt;()-&gt;GetOwner();
+
+    <span class="hljs-comment">//一定時間後にプールに戻す</span>
+    m_currentTime += g_gameTime-&gt;GetFrameDeltaTime();
+    <span class="hljs-keyword">if</span> (m_currentTime &gt;= RESTORE_TIME) owner-&gt;SetRestore(<span class="hljs-literal">true</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ZombieDeathState::Exit</span><span class="hljs-params">()</span>
+</span>{
+}
+</div></code></pre>
+<p>↑DeathState時の処理↑</p>
+<br>
+<h4 id = "シングルトンパターン" style="color: yellow;">シングルトンパターン</h4>
+<p>管理クラスが複数生成されることによって発生する、不具合の抑制、
+及び、管理クラスへのアクセスの簡略化を目的に、<br>
+シングルトンパターンを用いて、管理クラスの生成を行った。</p>
+<p>管理クラスの唯一性を保つことができ、クラスが複数を生成されてしまうリスクを防ぐだけでなく、<br>
+グローバルアクセスになるため、各クラスが管理クラスへとアクセスできなくなる。<br>
+（かといって、多くのクラスが管理クラスを知らなくてもいいようなクラス設計をしている）</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">private</span>:
+    <span class="hljs-comment">/** 自身のインスタンス */</span>
+    <span class="hljs-keyword">static</span> BattleManager* m_instance;
+
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-comment">/** BattleManagerクラスのインスタンスを作成 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">CreateInstance</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!m_instance) m_instance = <span class="hljs-keyword">new</span> BattleManager();
+    }
+    <span class="hljs-comment">/** BattleManagerクラスのインスタンスを削除 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">DeleteInstance</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (m_instance) {
+            <span class="hljs-keyword">delete</span> m_instance;
+            m_instance = <span class="hljs-literal">nullptr</span>;
+        }
+    }
+    <span class="hljs-comment">/** BattleManagerクラスのインスタンスを取得 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> BattleManager* <span class="hljs-title">GetInstance</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> m_instance; }
+</div></code></pre>
+<p>↑管理クラスのヘッダーファイルの一部↑</p>
+<br>
+<br>
+<h2 id = "今後の展望" style="color: red;">今後の展望</h2>
+<hr>
+<h4 id="font-color%22ffff00%22%E3%81%95%E3%82%89%E3%81%AA%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E9%A7%86%E5%8B%95%E8%A8%AD%E8%A8%88font"><font color="#ffff00">さらなるデータ駆動設計</font></h4>
+<p>イテレーション速度上げていき、さらなる開発の効率化へ！！<br>
+今後は数値だけではなく、「行動パターン」や「オブジェクトの配置」なども調整できるようにしたいと考えている。<br>
+（オブジェクト配置は外部GUIツールを用いて視覚的に行えるように）</p>
+<br>
+<h4 id="font-color%22ffff00%22%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%AD%E3%82%B1%E3%83%BC%E3%82%BF%E3%83%BCfont"><font color="#ffff00">メモリアロケーター</font></h4>
+<p>今回のオブジェクトプール実装に伴い、メモリ管理を意識するようになった。<br>
+だが、すべてのオブジェクトのnewなどでは活用できていない。<br>
+今後はメモリアロケーターを自身で作成して、自身でメモリ管理を行い、
+メモリへの理解をさらに深めていきたい。</p>
+<h2 id="brbrbr"><br><br><br></h2>
+<p>作成者<br>
+　　河原電子ビジネス専門学校　ゲームクリエイター科２年<br>
+　　永見 凜</p>
+<p>メールアドレス<br>
+　　ca01244021@st.kawahara.ac.jp</p>
+
+</body>
+</html>

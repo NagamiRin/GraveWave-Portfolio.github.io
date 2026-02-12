@@ -1,0 +1,9 @@
+body {
+    background-image: url('./back.png');
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;            /* 文字を白にする（これがないと読めなくなります） */
+}
